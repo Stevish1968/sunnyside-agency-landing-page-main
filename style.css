@@ -485,6 +485,10 @@ p {
     flex-direction: row-reverse;
   }
 
+  .stand-out-writeup, .transform-writeup{
+    padding: 0;
+  }
+
   .stand-out-img,
   .stand-out-writeup,
   .transform-img,
