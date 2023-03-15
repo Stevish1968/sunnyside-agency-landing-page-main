@@ -1,0 +1,519 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --soft-red: hsl(7, 99%, 70%);
+  --yellow: hsl(51, 100%, 49%);
+  --desaturated-cyan: hsl(167, 40%, 24%);
+  --dark-blue: hsl(198, 62%, 26%);
+  --moderate-cyan: hsl(168, 34%, 41%);
+
+  --desaturated-blue: hsl(212, 27%, 19%);
+  --dark-grayish-blue: hsl(213, 9%, 39%);
+  --grayish-blue: hsl(232, 10%, 55%);
+  --light-grayish-blue: hsl(210, 4%, 67%);
+  --White: hsl(0, 0%, 100%);
+
+  /* font-family: 'Barlow', sans-serif;
+    font-family: 'Fraunces', serif; */
+}
+
+html {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+}
+
+body {
+  background: var(--desaturated-blue)
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+header {
+  min-height: 600px;
+  background-image: url("images/mobile/image-header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color : var(--White);
+}
+
+.btn:hover {
+  color: var(--White);
+  background-color: hsl(0, 0%, 100%, 15%);
+ 
+}
+
+.btn {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  background-color: var(--White);
+  color: var(--dark-blue);
+  padding: 1rem 1.25rem;
+  border-radius: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.overlay{
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s, visibility 0s 1s;
+}
+
+.overlay.open{
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s;
+}
+.mobile {
+  position: absolute;
+  width: 100%;
+}
+
+
+
+.arrow-right {
+  position: absolute;
+  right:0;
+  top: 0;
+  margin-top: -30px;
+  height: 30px;
+  width: 30px;
+  border: 30px solid transparent;
+  border-right-color: var(--White);
+}
+
+
+.mobile-menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 23rem;
+  width: 91%;
+  text-align: center;
+  list-style: none;
+  background: var(--White);
+}
+
+.mobile ul {
+  list-style: none;
+}
+
+.mobile-menu li {
+  padding: 1.5rem ;
+}
+
+.mobile-menu ul a {
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--dark-blue);
+}
+
+.mobile-menu .btn {
+  background: var(--yellow);
+}
+
+nav ul {
+  display: none;
+  list-style: none;
+}
+
+.active {
+  display: block;
+}
+
+h1 {
+  font-family: "Fraunces", serif;
+  line-height: 1.2;
+  letter-spacing: 0.5rem;
+  font-weight: 900;
+  color: var(--White);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  padding: 5.5rem 0;
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta img {
+  margin-inline: auto;
+}
+
+h2 {
+  font-family: "Fraunces", serif;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  padding-block: 2rem;
+}
+
+.transform-writeup,
+.stand-out-writeup {
+  text-align: center;
+  padding: 2rem 2rem 4rem 2rem;
+  background: var(--White)
+}
+
+p {
+  padding: 2rem 0.5rem;
+  font-size: 1.125rem;
+  color: var(--dark-grayish-blue);
+}
+
+/* .transform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+} */
+
+.transform-img {
+  background-image: url("images/mobile/image-transform.jpg");
+}
+
+.stand-out-img {
+  background-image: url("images/mobile/image-stand-out.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.transform-img,
+.stand-out-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 525px;
+}
+
+
+.stand-out-writeup a {
+  border-bottom:solid 2px hsl(7, 99%, 70%, 0.3);
+}
+
+.stand-out-writeup a:hover {
+  border-bottom:solid 4px hsl(7, 99%, 70%);
+}
+
+.transform-writeup a {
+  border-bottom: solid 3px hsla(51, 100%, 49%, 0.3);
+}
+
+.transform-writeup a:hover {
+  border-bottom: solid 4px hsla(51, 100%, 49%);
+}
+
+
+
+.transform-writeup a,
+.stand-out-writeup a {
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  text-decoration: none;
+  color: var(--desaturated-blue);
+  font-weight: 900; 
+}
+
+
+
+.design-cherry {
+  background-image: url("images/mobile/image-graphic-design.jpg");
+}
+
+.design-orange {
+  background-image: url("images/mobile/image-photography.jpg");
+}
+
+.design-cherry,
+.design-orange {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  width: 100%;
+  min-height: 650px;
+  background-size: cover;
+  background-position: center top;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.design-cherry h3,
+.design-orange h3 {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.design-cherry h3 {
+  color: var(--desaturated-cyan);
+}
+
+.design-orange h3 {
+  color: var(--dark-blue);
+}
+
+.design-cherry p {
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  color: var(--desaturated-cyan);
+}
+
+.design-orange p {
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  color: var(--dark-blue);
+}
+
+.testimonials {
+  text-align: center;
+  background: var(--White)
+}
+
+.title {
+  text-align: center;
+  background: var(--White);
+}
+
+ .title {
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--light-grayish-blue);
+  padding: 4rem 0 2rem 0;
+}
+
+.testimonials img {
+  border-radius: 50%;
+  width: 75px;
+  margin-inline: auto;
+  padding-top: 1rem;
+}
+
+.testimonials .profile-name {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  color: var(--desaturated-blue);
+  font-size: 1.125rem;
+  padding: 0 0 0.5rem 0;
+}
+
+.testimonials .job-title {
+  color: var(--light-grayish-blue);
+}
+
+.photos img {
+  width: 50%;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 0 0 0;
+  background: var(--White);
+}
+
+.media {
+  background: var(--White);
+  text-align: center;
+  background: hsla(168, 34%, 70%, 1);
+}
+
+.media ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+}
+
+.media li a {
+  font-size: 1.125rem;
+  text-decoration: none;
+  color: var(--moderate-cyan);
+}
+
+.media-icons {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 2rem 0;
+}
+
+.media img {
+  padding: 0.75rem;
+}
+
+.logo {
+  font-family: "Fraunces", serif;
+  text-transform: lowercase;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--desaturated-cyan);
+  padding: 3rem 0 1.5rem 0;
+}
+
+
+
+@media screen and (min-width: 648px) {
+
+  .mobile {
+    display: none;
+  }
+
+  header {
+    background-image: url('images/desktop/image-header.jpg');
+    height: 750px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  header ul {
+    display: flex;
+  }
+
+  header li::after {
+    content: "";
+    padding: 1rem;
+  }
+
+
+  .stand-out,
+  .transform {
+    display: flex;
+  }
+
+  .transform {
+    flex-direction: row-reverse;
+  }
+
+  .stand-out-img,
+  .stand-out-writeup,
+  .transform-img,
+  .transform-writeup {
+    width: 50%;
+  }
+
+  .design-photo {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .design-cherry {
+    background-image: url("images/desktop/image-graphic-design.jpg");
+  }
+  
+  .design-orange {
+    background-image: url("images/desktop/image-photography.jpg");
+  }
+
+  .testimonials {
+    display:flex;
+  }
+
+  .photos img {
+    width: 25%;
+  }
+
+  .media-content {
+    max-width: 50%;
+    margin-inline: auto;
+  }
+
+
+}
