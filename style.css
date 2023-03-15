@@ -241,9 +241,10 @@ h2 {
   padding-block: 2rem;
 }
 
+
 .transform-writeup,
 .stand-out-writeup {
-  padding: 2rem 2rem 4rem 2rem;
+  padding: 2rem 4rem 4rem 4rem;
   background: var(--White)
 }
 
@@ -475,6 +476,9 @@ p {
   .stand-out,
   .transform {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
   }
 
   .transform {
